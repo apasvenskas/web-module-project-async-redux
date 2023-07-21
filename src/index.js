@@ -1,10 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
-import './index.css';
+import { createStore } from "redux;";
+import { Provider } from "react-redux";
+
+import App from "./App";
+import "./index.css";
+
+const store = createStore(reducer);
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
+
+// to measure performanve can use a function and reportVitals(console.log) or send endpoint to https://bit.ly/CRA-vitals
+reportWebVitals();
