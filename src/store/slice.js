@@ -1,5 +1,5 @@
 import axios from "axios";
-import {configureStore,createAsyncThunk,createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 export const bitcoinPrice = createAsyncThunk("price/getData", 
      async (arg, {rejectWithvalue}) => {

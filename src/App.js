@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bitcoinPrice} from "./store/slice";
 import "./App.css";
-import store from "./store/store";
+import BitcoinInfo from "./components/bitcoinPrice"
 
 function App() {
   const dispatch = useDispatch(); 
@@ -12,12 +12,15 @@ function App() {
     dispatch(bitcoinPrice());
   }, []);
 
+  const bitcoinInfo = () => {
+    dispatch(bitcoinPrice());
+  }
+
   return (
     <div className="App">
       <h1>Bitcoin Price</h1>
       <div>
-        {JSON.stringify(bitcoin)}
-        <button>Generate Bitcoin Info</button>
+        <button onClick={bitcoinInfo} >Generate Bitcoin Info</button>
       </div>
     </div>
   )
